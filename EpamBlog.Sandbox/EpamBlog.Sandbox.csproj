@@ -64,6 +64,10 @@
       <Project>{a5468f76-2c97-4d30-897a-ab408879f0d5}</Project>
       <Name>EpamBlog.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EpamBlog.DataAccess\EpamBlog.DataAccess.csproj">
+      <Project>{458ccf31-9b9b-47a5-b07b-c4d2db34e944}</Project>
+      <Name>EpamBlog.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EpamBlog.Model\EpamBlog.Model.csproj">
       <Project>{f4338134-5875-4784-b49c-b22100cf3ffb}</Project>
       <Name>EpamBlog.Model</Name>

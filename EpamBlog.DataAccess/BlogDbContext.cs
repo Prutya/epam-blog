@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace EpamBlog.DataAccess
 {
-    public class BlogDbContext : DbContext, IBlogDbContext
+    public class BlogDbContext : DbContext
     {
         public DbSet<Article> Articles { get; set; }
         public DbSet<Author> Authors { get; set; }

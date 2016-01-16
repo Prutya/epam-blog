@@ -1,5 +1,6 @@
-﻿using System;
-using EpamBlog.Business;
+﻿using EpamBlog.DataAccess;
+using System;
+using static System.Console;
 
 namespace EpamBlog.Sandbox
 {
@@ -7,24 +8,16 @@ namespace EpamBlog.Sandbox
     {
         static void Main(string[] args)
         {
-            var authorHelper = new AuthorHelper();
+            var uow = new UnitOfWork();
 
-            var authors = authorHelper.GetAll();
+            var authors = uow.AuthorRepository.Get();
 
             foreach (var author in authors)
             {
-                Console.WriteLine(author.Name);
-                foreach (var article in author.Articles)
-                {
-                    Console.WriteLine("\t{0}", article.Title);
-                    foreach (var feedback in article.Feedbacks)
-                    {
-                        Console.WriteLine("\t{0}", feedback.Name);
-                    }
-                }
+                WriteLine(author.Name);
             }
 
-            Console.ReadLine();
+            ReadLine();
         }
     }
 }
