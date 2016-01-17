@@ -14,7 +14,7 @@ namespace EpamBlog.Sandbox
 
             foreach (var author in authors)
             {
-                WriteLine(author.Name);
+                WriteLine(author.Email);
             }
 
             ReadLine();

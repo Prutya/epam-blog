@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EpamBlog.Web.Models.Author.IndexViewModel>
+@{
+    ViewBag.Title = "Authors list";
+}
+
+<h2>Authors list</h2>
+@Html.ActionLink("Create", "Create", "Authors", new { @class = "btn btn-primary" })
+<hr />
+
+<div class="row">
+    <div class="list-group col-md-12">
+        @foreach (var item in Model)
+        {
+            <div class="list-group-item col-md-4">
+                <p class="list-group-item-heading">@(item.FirstName) @(item.LastName)</p>
+                <p class="list-group-item-text">@(item.Email)</p>
+                @Html.ActionLink("Details", "Details", "Authors", new { id = item.Id }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Edit", "Edit", "Authors", new { id = item.Id }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Remove", "Remove", "Authors", new { id = item.Id }, new { @class = "btn btn-warning" })
+            </div>
+        }
+    </div>
+</div>
+

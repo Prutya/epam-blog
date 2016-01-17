@@ -18,7 +18,9 @@ namespace EpamBlog.DataAccess
             {
                 authors.Add(new Author()
                 {
-                    Name = "TEST_AUTHOR_" + i
+                    FirstName = "TEST_AUTHOR_FN_" + i,
+                    LastName = "TEST_AUTHOR_LN_" + i,
+                    Email = "test_" + i + "@author.com"
                 });
 
                 var articles = new List<Article>();
@@ -44,7 +46,7 @@ namespace EpamBlog.DataAccess
                         {
                             Article = articles[j],
                             ArticleId = articles[j].Id,
-                            Email = "test" + i + "_" + j + "_" + k + "@test.com",
+                            Email = "test" + i + "_" + j + "_" + k + "@feedback.com",
                             IsPositive = rand.Next(0, 100) >= 50,
                             Text = "TEST_FEEDBACK_TEXT_" + i + "_" + j + "_" + k,
                             Name = "TEST_FEEDBACK_NAME_" + i + "_" + j + "_" + k

@@ -63,10 +63,13 @@ namespace EpamBlog.DataAccess
             _dbSet.Add(entity);
         }
 
-        public virtual void Delete(object id)
+        public virtual void Delete(int id)
         {
-            TEntity entityToDelete = _dbSet.Find(id);
-            Delete(entityToDelete);
+            TEntity entityToDelete = _dbSet.FirstOrDefault(o => o.Id == id);
+            if (entityToDelete != null)
+            {
+                Delete(entityToDelete);
+            }
         }
 
         public virtual void Delete(TEntity entityToDelete)
