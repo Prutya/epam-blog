@@ -53,9 +53,9 @@ namespace EpamBlog.DataAccess
             }
         }
 
-        public virtual TEntity GetByID(object id)
+        public virtual TEntity GetByID(int id)
         {
-            return _dbSet.Find(id);
+            return _dbSet.FirstOrDefault(o => o.Id == id);
         }
 
         public virtual void Insert(TEntity entity)

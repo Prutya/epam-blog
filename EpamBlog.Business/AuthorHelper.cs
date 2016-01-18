@@ -52,6 +52,10 @@ namespace EpamBlog.Business
         {
             _uow.AuthorRepository.Update(entityToUpdate);
         }
+        public void Save()
+        {
+            _uow.Save();
+        }
 
         private bool disposed = false;
 
