@@ -12,21 +12,22 @@
         @foreach (var item in Model)
         {
             <div class="list-group-item col-md-4">
-                <p class="list-group-item-heading">@(item.FirstName) @(item.LastName)</p>
-                <p class="list-group-item-text">@(item.Email)</p>
-                <hr />
-                <div class="btn-group btn-group-sm">
+                <div class="col-md-8">
+                    <p class="list-group-item-heading">@(item.FirstName) @(item.LastName)</p>
+                    <p class="list-group-item-text">@(item.Email)</p>
+                </div>
+                <div class="btn-group btn-group-sm btn-group-vertical col-md-4">
                     <a href="/Authors/Details/@(item.Id)" class="btn btn-default">
                         <span class="glyphicon glyphicon-list-alt"></span>
                         Details
                     </a>
                     <a href="/Authors/Edit/@(item.Id)" class="btn btn-default">
                         <span class="glyphicon glyphicon-pencil"></span>
-                         Edit
+                        Edit
                     </a>
                     <a href="/Authors/Remove/@(item.Id)" class="btn btn-warning">
                         <span class="glyphicon glyphicon-trash"></span>
-                         Remove
+                        Remove
                     </a>
                 </div>
             </div>
