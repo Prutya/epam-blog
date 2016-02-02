@@ -44,5 +44,17 @@ namespace Blog.Web.Controllers
             _articleService.Delete(id);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(ViewModels.Article.CreateViewModel)
+        {
+
+        }
     }
 }

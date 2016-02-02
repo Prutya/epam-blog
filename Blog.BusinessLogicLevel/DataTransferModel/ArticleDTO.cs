@@ -9,9 +9,10 @@ namespace Blog.BusinessLogicLayer.DataTransferModel
         public string Title { get; set; }
         public string Text { get; set; }
         public string AuthorId { get; set; }
-        public DateTime? TimeCreated { get; set; }
-        public DateTime? TimeEdited { get; set; }
+        public DateTime TimeCreated { get; set; }
+        public DateTime TimeEdited { get; set; }
         public string AuthorName { get; set; }
-        public int[] TagIds { get; set; }
+
+        public IEnumerable<TagDTO> Tags { get; set; }
     }
 }

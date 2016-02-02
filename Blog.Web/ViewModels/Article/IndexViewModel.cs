@@ -11,6 +11,7 @@ namespace Blog.Web.ViewModels.Article
         public string Title { get; set; }
         public string PreviewText { get; set; }
         public DateTime TimeCreated { get; set; }
+        public IEnumerable<Tag.IndexViewModel> Tags { get; set; } 
 
         public string AuthorName { get; set; }
     }

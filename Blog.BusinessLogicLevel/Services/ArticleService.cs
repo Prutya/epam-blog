@@ -31,14 +31,14 @@ namespace Blog.BusinessLogicLayer.Services
                 TimeEdited = currentTime
             };
             
-            foreach(int tagId in data.TagIds)
+            foreach(var tag in data.Tags)
             {
-                Tag tag = _uow.Tags.Get(tagId);
-                if (tag == null)
+                Tag dbtag = _uow.Tags.Get(tag.Id);
+                if (dbtag == null)
                 {
                     throw new ValidationException("There is no tag with such id.", "TagIds");
                 }
-                article.Tags.Add(tag);
+                article.Tags.Add(dbtag);
             }
 
             _uow.Save();

@@ -212,8 +212,10 @@
     <Compile Include="Util\NinjectDependencyResolver.cs" />
     <Compile Include="ViewModels\Account\LoginViewModel.cs" />
     <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Article\CreateViewModel.cs" />
     <Compile Include="ViewModels\Article\IndexViewModel.cs" />
     <Compile Include="ViewModels\Article\DeleteViewModel.cs" />
+    <Compile Include="ViewModels\Tag\IndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

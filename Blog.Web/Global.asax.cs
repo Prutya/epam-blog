@@ -36,6 +36,8 @@ namespace Blog.Web
                             src.Text == null ? null :
                             src.Text.Length > 200 ? src.Text.Substring(0, 200) + "..." :
                             src.Text));
+
+            Mapper.CreateMap<TagDTO, ViewModels.Tag.IndexViewModel>();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Blog.BusinessLogicLayer.DataTransferModel;
 using Blog.DataAccessLayer.Models;
+using System.Linq;
 
 namespace Blog.BusinessLogicLayer.AppStart
 {
@@ -18,6 +19,8 @@ namespace Blog.BusinessLogicLayer.AppStart
                     dest.AuthorName, opts =>
                         opts.MapFrom(src =>
                             src.ClientProfile.ShortName));
+
+            Mapper.CreateMap<Tag, TagDTO>();
 
             // FEEDBACKS
 

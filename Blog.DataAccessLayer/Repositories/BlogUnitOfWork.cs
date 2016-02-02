@@ -66,8 +66,8 @@ namespace Blog.DataAccessLayer.Repositories
             ClientProfile user1Profile = new ClientProfile
             {
                 Id = user1.Id,
-                LastName = "John",
-                FirstName = "Doe"
+                LastName = "Doe",
+                FirstName = "John"
             };
             ClientManager.Create(user1Profile);
             #endregion
@@ -84,8 +84,8 @@ namespace Blog.DataAccessLayer.Repositories
             ClientProfile user2Profile = new ClientProfile
             {
                 Id = user2.Id,
-                LastName = "John",
-                FirstName = "Smith"
+                LastName = "Smith",
+                FirstName = "John"
             };
             ClientManager.Create(user2Profile);
             #endregion
@@ -149,7 +149,7 @@ namespace Blog.DataAccessLayer.Repositories
                     Text = "Все CSS-селекторы живут в глобальной области видимости. Каждому, кто когда-либо имел дело с CSS, приходилось мириться с этой глобальной особенностью. Модель, некогда созданную для стилизации академических документов, сейчас едва ли можно назвать удобным инструментом для создания современных веб-приложений. Абсолютно каждый селектор потенциально может вступить в борьбу с другим селектором или стилизовать «посторонний» элемент. В этой «глобальной» борьбе селектор может даже полностью проиграть, в итоге не применив к странице ни одного из своих правил. Каждый раз модифицируя css-файл, необходимо хорошо подумать о глобальной среде, в которой будут существовать наши стили. Ни одна другая технология веб-разработки не требует столько усилий только для того, чтобы обеспечить коду минимальный уровень поддерживаемости. Так не должно быть. Пора оставить позади эру глобальных стилей. Наступило время закрытого CSS.",
                     Tags = new List<Tag>()
                     {
-                        tags[4], tags[5], tags[6],
+                        tags[4], tags[5],
                         tags[8], tags[9], tags[10]
                     },
                     ClientProfile = user1Profile,
