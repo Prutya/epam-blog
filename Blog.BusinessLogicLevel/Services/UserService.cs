@@ -59,20 +59,19 @@ namespace Blog.BusinessLogicLayer.Services
             return claim;
         }
         // начальная инициализация бд
-        public async Task SetInitialData(UserDTO adminDto, List<string> roles)
-        {
-            foreach (string roleName in roles)
-            {
-                var role = await _uow.RoleManager.FindByNameAsync(roleName);
-                if (role == null)
-                {
-                    role = new ApplicationRole { Name = roleName };
-                    await _uow.RoleManager.CreateAsync(role);
-                }
-            }
-            await Create(adminDto);
-        }
-
+        //public async Task SetInitialData(UserDTO adminDto, List<string> roles)
+        //{
+        //    foreach (string roleName in roles)
+        //    {
+        //        var role = await _uow.RoleManager.FindByNameAsync(roleName);
+        //        if (role == null)
+        //        {
+        //            role = new ApplicationRole { Name = roleName };
+        //            await _uow.RoleManager.CreateAsync(role);
+        //        }
+        //    }
+        //    await Create(adminDto);
+        //}
 
         public void Dispose()
         {

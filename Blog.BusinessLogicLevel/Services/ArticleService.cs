@@ -63,5 +63,11 @@ namespace Blog.BusinessLogicLayer.Services
             var articles = Mapper.Map<IEnumerable<ArticleDTO>>(_uow.Articles.GetAll());
             return articles;
         }
+
+        public void Delete(int id)
+        {
+            _uow.Articles.Delete(id);
+            _uow.Save();
+        }
     }
 }

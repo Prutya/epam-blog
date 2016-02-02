@@ -22,7 +22,20 @@ namespace Blog.Web
         {
             BusinessLogicLayer.AppStart.AutoMapperConfig.RegisterMappings();
 
-            Mapper.CreateMap<ArticleDTO, ViewModels.Article.IndexViewModel>();
+            Mapper.CreateMap<ArticleDTO, ViewModels.Article.IndexViewModel>().
+                ForMember(dest =>
+                    dest.PreviewText, opts =>
+                        opts.MapFrom(src =>
+                            src.Text == null ? null :
+                            src.Text.Length > 200 ? src.Text.Substring(0, 200) + "..." :
+                            src.Text));
+            Mapper.CreateMap<ArticleDTO, ViewModels.Article.DeleteViewModel>().
+                ForMember(dest =>
+                    dest.PreviewText, opts =>
+                        opts.MapFrom(src =>
+                            src.Text == null ? null :
+                            src.Text.Length > 200 ? src.Text.Substring(0, 200) + "..." :
+                            src.Text));
         }
     }
 }

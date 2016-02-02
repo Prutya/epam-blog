@@ -30,18 +30,18 @@ namespace Blog.Web.Controllers
             }
         }
 
-        private async Task SetInitialDataAsync()
-        {
-            await UserService.SetInitialData(new UserDTO
-            {
-                Email = "user@example.com",
-                UserName = "user@example.com",
-                Password = "P@ssw0rd!",
-                FirstName = "John",
-                LastName = "Doe",
-                Role = "Admin",
-            }, new List<string> { "User", "Admin" });
-        }
+        //private async Task SetInitialDataAsync()
+        //{
+        //    await UserService.SetInitialData(new UserDTO
+        //    {
+        //        Email = "user@example.com",
+        //        UserName = "user@example.com",
+        //        Password = "P@ssw0rd!",
+        //        FirstName = "John",
+        //        LastName = "Doe",
+        //        Role = "Admin",
+        //    }, new List<string> { "User", "Admin" });
+        //}
 
         [HttpGet]
         public ActionResult Login()
@@ -53,7 +53,7 @@ namespace Blog.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(ViewModels.Account.LoginViewModel model)
         {
-            await SetInitialDataAsync();
+            //await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
@@ -93,7 +93,7 @@ namespace Blog.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(ViewModels.Account.RegisterViewModel model)
         {
-            await SetInitialDataAsync();
+            // await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO

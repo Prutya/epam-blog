@@ -1,25 +1,36 @@
 ﻿using Blog.DataAccessLayer.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace Blog.DataAccessLayer.EF
 {
     public class BlogDbContext : IdentityDbContext<ApplicationUser>
     {
+        public BlogDbContext()
+        {
+
+        }
+
         public BlogDbContext(string connectionString)
             : base(connectionString)
         {
-            Database.SetInitializer(new BlogDbInitializer());
+            Database.SetInitializer(new DropCreateDatabaseAlways<BlogDbContext>());
         }
+
+        public DbSet<ClientProfile> ClientProfiles { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<IdentityUserLogin>()
-                .HasKey(l => l.UserId);
+                .HasKey(o => o.UserId);
             modelBuilder.Entity<IdentityRole>()
-                .HasKey(r => r.Id);
+                .HasKey(o => o.Id);
             modelBuilder.Entity<IdentityUserRole>()
-                .HasKey(r => new { r.RoleId, r.UserId });
+                .HasKey(o => new { o.RoleId, o.UserId });
 
             modelBuilder.Entity<Article>()
                 .HasRequired(o => o.ClientProfile)
@@ -34,12 +45,7 @@ namespace Blog.DataAccessLayer.EF
             modelBuilder.Entity<Feedback>()
                 .HasRequired(o => o.Article)
                 .WithMany(o => o.Feedbacks)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
-
-        public DbSet<ClientProfile> ClientProfiles { get; set; }
-        public DbSet<Article> Articles { get; set; }
-        public DbSet<Feedback> Feedbacks { get; set; }
-        public DbSet<Tag> Tags { get; set; }
     }
 }

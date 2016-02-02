@@ -9,5 +9,6 @@ namespace Blog.BusinessLogicLayer.Interfaces
         void CreateArticle(ArticleDTO data);
         ArticleDTO GetArticle(int? id);
         IEnumerable<ArticleDTO> GetArticles();
+        void Delete(int id);
     }
 }
