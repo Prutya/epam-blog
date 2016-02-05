@@ -11,26 +11,26 @@ namespace Blog.DataAccessLayer.Repositories
 {
     public class ClientManager : IClientManager
     {
-        public BlogDbContext Database { get; set; }
+        private readonly BlogDbContext _db;
 
         public ClientManager(BlogDbContext context)
         {
-            Database = context;
+            _db = context;
         }
 
         public void Create(ClientProfile item)
         {
-            Database.ClientProfiles.Add(item);
-            Database.SaveChanges();
+            _db.ClientProfiles.Add(item);
+            _db.SaveChanges();
         }
 
         public ClientProfile Get(string id)
         {
-            return Database.ClientProfiles.Find(id);
+            return _db.ClientProfiles.Find(id);
         }
 
         #region Dispose pattern
-        public void Dispose () => Database.Dispose();
+        public void Dispose () => _db.Dispose();
         #endregion
     }
 }

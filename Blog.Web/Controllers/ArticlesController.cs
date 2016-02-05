@@ -50,11 +50,5 @@ namespace Blog.Web.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Create(ViewModels.Article.CreateViewModel)
-        {
-
-        }
     }
 }
