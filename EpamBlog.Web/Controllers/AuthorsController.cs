@@ -8,16 +8,16 @@ namespace EpamBlog.Web.Controllers
 {
     public class AuthorsController : Controller
     {
-        private AuthorHelper _authorHelper;
+        //private AuthorHelper _authorHelper;
 
-        public AuthorsController()
-        {
-            _authorHelper = new AuthorHelper();
-        }
-        public AuthorsController(AuthorHelper authorHelper)
-        {
-            _authorHelper = authorHelper;
-        }
+        //public AuthorsController()
+        //{
+        //    _authorHelper = new AuthorHelper();
+        //}
+        //public AuthorsController(AuthorHelper authorHelper)
+        //{
+        //    _authorHelper = authorHelper;
+        //}
 
         // GET: /Authors/Index
         public ActionResult Index()

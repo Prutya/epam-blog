@@ -1,4 +1,4 @@
-﻿using EpamBlog.Model;
+﻿using EpamBlog.DataAccess.Models;
 using System.Data.Entity;
 
 namespace EpamBlog.DataAccess
@@ -8,6 +8,7 @@ namespace EpamBlog.DataAccess
         public DbSet<Article> Articles { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         public BlogDbContext()
             :base("BlogDbConnectionString")

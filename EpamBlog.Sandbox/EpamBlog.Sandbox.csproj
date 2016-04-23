@@ -68,10 +68,6 @@
       <Project>{458ccf31-9b9b-47a5-b07b-c4d2db34e944}</Project>
       <Name>EpamBlog.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EpamBlog.Model\EpamBlog.Model.csproj">
-      <Project>{f4338134-5875-4784-b49c-b22100cf3ffb}</Project>
-      <Name>EpamBlog.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
